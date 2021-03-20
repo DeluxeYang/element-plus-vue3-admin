@@ -1,34 +1,24 @@
 import { defineConfig, loadEnv, UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import postcss from 'postcss'
-import atImport from 'postcss-import'
 
 export default (mode: string): UserConfigExport => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
-  console.log('vite.config.ts')
-  // process css
-  postcss([require('postcss-easy-import')])
-    .use(atImport({
-      path: [path.resolve(__dirname, '/src')]
-    // resolve(id, basedir, importOptions) {
-    //   console.log(id, basedir, importOptions)
-    // }
-    // resolve: {
-    //   alias: {
-    //     '/@': path.resolve(__dirname, 'src')
-    //   }
-    // }
-    }))
-
 
   return defineConfig({
     // assetsInclude: 'public',
     server: {
+      // proxy: {
+      //   [<string>process.env.VITE_APP_API_BASE_URL]: {
+      //     target: process.env.VITE_APP_BACKEND_HOST,
+      //     changeOrigin: true
+      //   }
+      // },
       proxy: {
-        [<string>process.env.VITE_APP_API_BASE_URL]: {
-          target: process.env.VITE_APP_BACKEND_HOST,
-          changeOrigin: true
+        '/api': {
+          target: 'http://localhost:3001/',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
         }
       },
       port: 7357
@@ -38,7 +28,7 @@ export default (mode: string): UserConfigExport => {
       // cssCodeSplit: true
     },
     optimizeDeps: {
-      include: ['axios', 'nprogress']
+      include: ['axios', 'nprogress', 'mockjs']
     },
     plugins: [vue()],
     css: {

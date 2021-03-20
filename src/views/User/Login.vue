@@ -2,14 +2,14 @@
   <div
     class="login-container"
     @keyup="enterSubmit">
-    <div class="login-weaper animated bounceInDown">
+    <div class="login-waper animated bounceInDown">
       <div class="login-left">
         <div class="login-time" />
         <img
           class="img"
           src="../../assets/logo.png"
-          width="20px"
-          height="20px"
+          width="50"
+          height="50"
           alt>
         <p class="title">
           {{ title }}
@@ -26,8 +26,7 @@
             status-icon
             :rules="loginRules"
             :model="loginFormData"
-            label-position="right"
-            label-width="80px">
+            label-position="right">
             <el-form-item prop="username">
               <el-input
                 v-model="loginFormData.username"
@@ -62,14 +61,6 @@
                 class="login-submit"
                 @click.prevent="onLogin">
                 登录
-              </el-button>
-            </el-form-item>
-            <el-form-item>
-              <el-button
-                type="primary"
-                size="small"
-                @click.prevent="resetFields(loginForm)">
-                重置
               </el-button>
             </el-form-item>
           </el-form>
@@ -112,12 +103,12 @@ const loginModule = () => {
     })
   }
   const showPassword = () => {
-    state.isShowPassword = state.isShowPassword === 'password' ? ref('') : ref('password')
+    state.isShowPassword = state.isShowPassword === 'password' ? '' : 'password'
   }
   const loginRules = reactive({
     username: [
       {
-        validator: (rule: any, value: any, callback) => {
+        validator: (rule: any, value: any, callback: any) => {
           if (!value) {
             return callback(new Error('用户名不能为空'))
           }
@@ -127,7 +118,7 @@ const loginModule = () => {
     ],
     password: [
       {
-        validator: (rule: any, value: any, callback) => {
+        validator: (rule: any, value: any, callback: any) => {
           if (!value) {
             return callback(new Error('密码不能为空'))
           }
@@ -164,8 +155,8 @@ export default defineComponent({
 
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-@import "../../styles/login.scss";
-@import "../../styles/variables.scss";
+@import "./src/styles/login.scss";
+@import "./src/styles/variables.scss";
 
 .show-pwd {
   font-size: 16px;

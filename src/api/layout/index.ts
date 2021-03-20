@@ -2,7 +2,7 @@ import request from '/@/utils/request'
 import { AxiosPromise } from 'axios'
 import { store } from '/@/store'
 const api = {
-  login: '/auth',
+  login: '/login',
   getUser: '/getUser',
   getRouterList: '/getRoute'
 }

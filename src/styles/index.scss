@@ -3,10 +3,42 @@
 @import './transition.scss';
 @import './element-ui.scss';
 @import './sidebar.scss';
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+
+button:focus {
+  outline: none;
+}
+
+@responsive {
+  .transition-width {
+    transition-property: width;
+  }
+
+  .flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .min-height-10 {
+    min-height: 2.5rem;
+  }
+
+  .min-width-32 {
+    min-width: 8rem;
+  }
+}
+html {
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
 body {
   height: 100%;
-  background-color: #F0F2F5;
+  overflow: hidden;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -17,10 +49,7 @@ label {
   font-weight: 700;
 }
 
-html {
-  height: 100%;
-  box-sizing: border-box;
-}
+
 
 #app {
   height: 100%;

@@ -19,7 +19,9 @@ router.beforeEach(async (to, from) => {
   if (!store.state.user.ACCESS_TOKEN) {
     return loginRoutePath + (to.fullPath ? `?from=${encodeURIComponent(encodeURIComponent(to.fullPath))}` : '')
   }
-  document.title = document.title ? document.title.split(' |')[0] + ' | ' + to.meta.title : to.meta.title
+  document.title = document.title ?
+    <string>document.title.split(' |')[0] + ' | ' + to.meta.title :
+    <string>to.meta.title
   // 判断是否还没添加过路由
   if (store.state.menu.menuList.length === 0) {
     await store.dispatch('menu/GenerateRoutes')

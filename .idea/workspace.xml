@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f2cea0b2-0213-46a4-a70a-0d848a590949" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/postcss.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/bg/cloud.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/element-ui.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/element-variables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/fonts/element-icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/fonts/element-icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/login.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/mixin.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/transition.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/layout/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/layout/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/formExtend.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formExtend.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/permission.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/element-variables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/login.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/User/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/User/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -68,7 +72,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -80,7 +84,8 @@
     <property name="node.js.selected.package.stylelint" value="C:\Projects\element-plus-admin\node_modules\stylelint" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="ts.external.directory.path" value="C:\Projects\element-plus-admin\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="ts.external.directory.path" value="C:\Projects\element-plus-vue3-admin\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -124,6 +129,9 @@
       <workItem from="1614914554023" duration="709000" />
       <workItem from="1615532703347" duration="99000" />
       <workItem from="1616050650303" duration="31908000" />
+      <workItem from="1616164136280" duration="6782000" />
+      <workItem from="1616172051180" duration="2617000" />
+      <workItem from="1616226362867" duration="945000" />
     </task>
     <task id="LOCAL-00001" summary="修改State">
       <created>1611650900567</created>
@@ -152,11 +160,45 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="修改State" />
     <MESSAGE value="2021-2-3" />
     <MESSAGE value="merge" />
     <option name="LAST_COMMIT_MESSAGE" value="merge" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1023" height="279" key="GridCell.Tab.0.bottom" timestamp="1616173899904">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1023" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616173899904" />
+    <state width="1023" height="279" key="GridCell.Tab.0.center" timestamp="1616173899900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1023" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616173899900" />
+    <state width="1023" height="279" key="GridCell.Tab.0.left" timestamp="1616173899900">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1023" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616173899900" />
+    <state width="1023" height="279" key="GridCell.Tab.0.right" timestamp="1616173899901">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1023" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616173899901" />
+    <state x="822" y="166" key="SettingsEditor" timestamp="1616169277895">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="822" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616169277895" />
   </component>
 </project>

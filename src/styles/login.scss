@@ -5,11 +5,11 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  background: url("../assets/bg/cloud.jpg") 0 bottom repeat-x #049ec4;
+  background: 0 bottom repeat-x #049ec4;
   animation: animate-cloud 20s linear infinite;
 }
 
-.login-weaper {
+.login-waper {
   margin: 0 auto;
   width: 1000px;
   box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.4);
@@ -39,9 +39,11 @@
   text-align: center;
   padding-top: 150px;
 }
+
 .login-border {
   padding-top:50px;
 }
+
 .login-time {
   position: absolute;
   left: 25px;
@@ -54,8 +56,12 @@
   overflow: hidden;
 }
 
+.login-left .img {
+  margin: auto
+}
+
 .login-left .title {
-  margin-top: 60px;
+  margin-top: 20px;
   text-align: center;
   color: #fff;
   font-weight: 300;
@@ -105,13 +111,13 @@
   a {
     color: #999;
     font-size: 12px;
-    margin: 0px 8px;
+    margin: 0 8px;
   }
 }
 
 .login-submit {
   width: 100%;
-  height: 45px;
+  height: 35px;
   border: 1px solid #409EFF;
   background: none;
   font-size: 18px;
@@ -119,7 +125,7 @@
   font-weight: 300;
   color: #409EFF;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 5px;
   transition: 0.25s;
 }
 
@@ -215,46 +221,5 @@
 
   .el-form-item__error {
     color: #F56C6C
-  }
-  @keyframes animate-cloud {
-    from {
-      background-position: 600px 100%;
-    }
-    to {
-      background-position: 0 100%;
-    }
-  }
-
-  @-webkit-keyframes animate-cloud {
-    from {
-      background-position: 600px 100%;
-    }
-    to {
-      background-position: 0 100%;
-    }
-  }
-  @-moz-keyframes animate-cloud {
-    from {
-      background-position: 600px 100%;
-    }
-    to {
-      background-position: 0 100%;
-    }
-  }
-  @-ms-keyframes animate-cloud {
-    from {
-      background-position: 600px 100%;
-    }
-    to {
-      background-position: 0 100%;
-    }
-  }
-  @-o-keyframes animate-cloud {
-    from {
-      background-position: 600px 100%;
-    }
-    to {
-      background-position: 0 100%;
-    }
   }
 }
