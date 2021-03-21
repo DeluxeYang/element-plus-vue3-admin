@@ -19,20 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2cea0b2-0213-46a4-a70a-0d848a590949" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="f2cea0b2-0213-46a4-a70a-0d848a590949" name="Default Changelist" comment="2021-3-20">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/layout/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/layout/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/permission.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/element-variables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/User/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/User/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shims-vue.d.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +120,8 @@
       <workItem from="1616050650303" duration="31908000" />
       <workItem from="1616164136280" duration="6782000" />
       <workItem from="1616172051180" duration="2617000" />
-      <workItem from="1616226362867" duration="945000" />
+      <workItem from="1616226362867" duration="4275000" />
+      <workItem from="1616327410217" duration="9367000" />
     </task>
     <task id="LOCAL-00001" summary="修改State">
       <created>1611650900567</created>
@@ -154,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612338182554</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2021-3-20">
+      <created>1616227404311</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616227404311</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,28 +174,33 @@
     <MESSAGE value="修改State" />
     <MESSAGE value="2021-2-3" />
     <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+    <MESSAGE value="2021-3-20" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-3-20" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1023" height="279" key="GridCell.Tab.0.bottom" timestamp="1616173899904">
+    <state width="1198" height="279" key="GridCell.Tab.0.bottom" timestamp="1616231367743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1023" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616173899904" />
-    <state width="1023" height="279" key="GridCell.Tab.0.center" timestamp="1616173899900">
+    <state width="1198" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616231367743" />
+    <state width="1198" height="279" key="GridCell.Tab.0.center" timestamp="1616231367743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1023" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616173899900" />
-    <state width="1023" height="279" key="GridCell.Tab.0.left" timestamp="1616173899900">
+    <state width="1198" height="279" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616231367743" />
+    <state width="1198" height="279" key="GridCell.Tab.0.left" timestamp="1616231367743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1023" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616173899900" />
-    <state width="1023" height="279" key="GridCell.Tab.0.right" timestamp="1616173899901">
+    <state width="1198" height="279" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616231367743" />
+    <state width="1198" height="279" key="GridCell.Tab.0.right" timestamp="1616231367743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1023" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616173899901" />
+    <state width="1198" height="279" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616231367743" />
     <state x="822" y="166" key="SettingsEditor" timestamp="1616169277895">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="822" y="166" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616169277895" />
+    <state x="901" y="256" key="Vcs.Push.Dialog.v2" timestamp="1616227419740">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="901" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616227419740" />
   </component>
 </project>
