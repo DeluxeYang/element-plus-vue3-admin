@@ -8,7 +8,7 @@
           v-for="(v,i) in tagsList"
           :key="v.path"
           :ref="el => { layoutTagsItem[i] = el }"
-          class="border border-gray-200 px-2 py-1 mx-1 cursor-pointer"
+          class="tags border border-gray-200 px-2 py-1 mx-1 cursor-pointer"
           :class="{'layout-tags-active': v.isActive}"
           @contextmenu.prevent="contextRightMenu(v,$event)">
           <i
@@ -40,6 +40,16 @@
         class="px-4 py-2 cursor-pointer hover:bg-gray-200"
         @click="closeAll">
         关闭所有
+      </li>
+      <li
+        class="px-4 py-2 cursor-pointer hover:bg-gray-200"
+        @click="closeLeft">
+        关闭左侧
+      </li>
+      <li
+        class="px-4 py-2 cursor-pointer hover:bg-gray-200"
+        @click="closeRight">
+        关闭右侧
       </li>
     </ul>
   </div>
@@ -84,8 +94,20 @@ const rightMenu = (store:Store<IState>, router: Router, route: RouteLocationNorm
     }
   }
   const closeOther = () => store.commit('tags/removeOtherTagNav', currentRightTags)
+  const closeAll = () => store.commit('tags/removeAllTagNav')
+  const closeRight = () => store.commit('tags/removeRightTagNav', currentRightTags)
+  const closeLeft = () => store.commit('tags/removeLeftTagNav', currentRightTags)
   document.body.addEventListener('click', () => menuPos.display = 'none')
-  return { menuPos, contextRightMenu, refresh, rightMenuEl, closeOther }
+  return {
+    menuPos,
+    contextRightMenu,
+    refresh,
+    rightMenuEl,
+    closeOther,
+    closeAll,
+    closeRight,
+    closeLeft
+  }
 }
 
 // 标签页滚动
@@ -122,7 +144,6 @@ export default defineComponent({
     const route = useRoute()
     const router = useRouter()
     const removeTagNav = (v: any) => store.commit('tags/removeTagNav', { cPath: route.path, tagsList: v })
-    const closeAll = () => store.commit('tags/removeAllTagNav')
 
     onMounted(() => {
       store.commit('tags/addCachedViews', { name: route.name, noCache: route.meta.noCache })
@@ -134,9 +155,14 @@ export default defineComponent({
     return {
       removeTagNav,
       ...tagScrollData,
-      ...rightMenuData,
-      closeAll
+      ...rightMenuData
     }
   }
 })
 </script>
+
+<style scoped>
+.tags {
+  position: relative;
+}
+</style>

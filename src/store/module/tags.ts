@@ -51,6 +51,18 @@ const mutations = {
     state.cachedViews.splice(0, index)
     router.push({ path: tagsList.path })
   },
+  removeRightTagNav(state: ITags, tagsList:ITagsList):void {
+    const index = state.tagsList.findIndex(v => v.path === tagsList.path)
+    state.tagsList.splice(index + 1)
+    state.cachedViews.splice(index + 1)
+    router.push({ path: tagsList.path })
+  },
+  removeLeftTagNav(state: ITags, tagsList:ITagsList):void {
+    const index = state.tagsList.findIndex(v => v.path === tagsList.path)
+    state.tagsList.splice(0, index)
+    state.cachedViews.splice(0, index)
+    router.push({ path: tagsList.path })
+  },
   removeAllTagNav(state: ITags):void {
     state.tagsList.splice(0)
     state.cachedViews.splice(0)
