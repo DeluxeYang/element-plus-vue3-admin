@@ -8,19 +8,19 @@ export default (mode: string): UserConfigExport => {
   return defineConfig({
     // assetsInclude: 'public',
     server: {
-      // proxy: {
-      //   [<string>process.env.VITE_APP_API_BASE_URL]: {
-      //     target: process.env.VITE_APP_BACKEND_HOST,
-      //     changeOrigin: true
-      //   }
-      // },
       proxy: {
-        '/api': {
-          target: 'http://localhost:3001/',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+        [<string>process.env.VITE_APP_API_BASE_URL]: {
+          target: process.env.VITE_APP_BACKEND_HOST,
+          changeOrigin: true
         }
       },
+      // proxy: {
+      //   '/api': {
+      //     target: 'http://localhost:3001/',
+      //     changeOrigin: true,
+      //     rewrite: (path) => path.replace(/^\/api/, '')
+      //   }
+      // },
       port: 7357
     },
     build: {
@@ -28,7 +28,7 @@ export default (mode: string): UserConfigExport => {
       // cssCodeSplit: true
     },
     optimizeDeps: {
-      include: ['axios', 'nprogress', 'mockjs']
+      include: ['axios', 'nprogress']
     },
     plugins: [vue()],
     css: {

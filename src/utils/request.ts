@@ -10,7 +10,7 @@ const request = axios.create({
   timeout: 60000 // 请求超时时间
 })
 
-// 异常拦截处理器
+// HttpStatus!=200异常拦截处理器
 const errorHandler = (error:{message:string}) => {
   loading.close()
   console.log('err' + error)
@@ -44,21 +44,19 @@ request.interceptors.response.use((response) => {
   const { data } = response
   loading.close()
   if (data.Code !== 200) {
-    let title = '请求失败'
-    if (data.Code === 401) {
+    if (data.Code === 10002) {
       if (store.state.user.ACCESS_TOKEN) {
         store.commit('layout/logout')
       }
-      title = '身份认证失败'
     }
     ElNotification({
-      title,
-      message: data.Msg,
+      message: data.message,
       type: 'error'
     })
-    return Promise.reject(new Error(data.Msg || 'Error'))
+    return Promise.reject(data.message || 'Error')
   }
   return response
 }, errorHandler)
+
 
 export default request

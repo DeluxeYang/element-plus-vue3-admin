@@ -95,12 +95,16 @@ const loginModule = () => {
   const onLogin = async () => {
     let { username, password } = loginFormData
     if (!await validate(loginForm)) return
-    await store.dispatch('user/login', { username: username, password: password })
-    ElNotification({
-      title: '欢迎',
-      message: '欢迎回来',
-      type: 'success'
-    })
+    await store.dispatch(
+      'user/login',
+      { username: username, password: password }
+    ).then(() => {
+      ElNotification({
+        title: '欢迎',
+        message: '欢迎回来',
+        type: 'success'
+      })
+    }).catch(() => [])
   }
   const showPassword = () => {
     state.isShowPassword = state.isShowPassword === 'password' ? '' : 'password'

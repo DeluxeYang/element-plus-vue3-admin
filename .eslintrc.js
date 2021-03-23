@@ -52,12 +52,6 @@ module.exports = {
     'no-lonely-if': 'error',
 
     /**
-     * 要求方法链中每个调用都有一个换行符
-     * @fixable
-     */
-    'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
-
-    /**
      * 路径别名设置
      * @fixable
      */

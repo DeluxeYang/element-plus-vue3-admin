@@ -6,7 +6,7 @@ import direct from '/@/directive/action'
 import router from '/@/router/index'
 import { store } from '/@/store'
 import '/@/permission'
-import '/@/mock/index'
+// import '/@/mock/index'
 
 import 'element-plus/lib/theme-chalk/index.css'
 import 'element-plus/lib/theme-chalk/display.css'
