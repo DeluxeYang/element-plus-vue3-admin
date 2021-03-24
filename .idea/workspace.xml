@@ -21,13 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f2cea0b2-0213-46a4-a70a-0d848a590949" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/permission.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/layout/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/layout/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/asyncRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/asyncRouter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/module/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/module/menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/module/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/module/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/listToTree.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/listToTree.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/User/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/User/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,8 @@
       <workItem from="1616172051180" duration="2617000" />
       <workItem from="1616226362867" duration="4275000" />
       <workItem from="1616327410217" duration="9367000" />
-      <workItem from="1616476648437" duration="9600000" />
+      <workItem from="1616476648437" duration="10591000" />
+      <workItem from="1616551983854" duration="7270000" />
     </task>
     <task id="LOCAL-00001" summary="修改State">
       <created>1611650900567</created>
@@ -170,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616403206939</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2021-3-23">
+      <created>1616488778645</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616488778645</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +206,7 @@
     <MESSAGE value="2021-3-20" />
     <MESSAGE value="2021-3-22" />
     <MESSAGE value="tags新增左侧右侧关闭" />
-    <option name="LAST_COMMIT_MESSAGE" value="tags新增左侧右侧关闭" />
+    <MESSAGE value="2021-3-23" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-3-23" />
   </component>
 </project>

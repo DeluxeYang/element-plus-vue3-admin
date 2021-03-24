@@ -1,34 +1,35 @@
 import request from '/@/utils/request'
 import { AxiosPromise } from 'axios'
 import { store } from '/@/store'
-const api = {
-  login: '/login',
-  getUser: '/getUser',
-  getRouterList: '/getRoute'
-}
+import md5 from 'md5'
+
 
 export interface loginParam {
     username: string,
     password: string
 }
+
 export function login(param: loginParam): AxiosPromise {
   return request({
-    url: api.login,
+    url: '/login',
     method: 'post',
-    data: param
+    data: {
+      username: param.username,
+      password: md5(param.password)
+    }
   })
 }
+
 export function getUser(): AxiosPromise {
   return request({
-    url: api.getUser,
-    method: 'get',
-    data: { token: store.state.user.ACCESS_TOKEN }
+    url: '/getUser',
+    method: 'get'
   })
 }
+
 export function getRouterList(): AxiosPromise {
   return request({
-    url: api.getRouterList,
-    method: 'get',
-    data: { token: store.state.user.ACCESS_TOKEN }
+    url: '/info',
+    method: 'get'
   })
 }

@@ -43,8 +43,8 @@ request.interceptors.request.use(config => {
 request.interceptors.response.use((response) => {
   const { data } = response
   loading.close()
-  if (data.Code !== 200) {
-    if (data.Code === 10002) {
+  if (data.code !== 200) {
+    if (data.code === 10002) {
       if (store.state.user.ACCESS_TOKEN) {
         store.commit('layout/logout')
       }

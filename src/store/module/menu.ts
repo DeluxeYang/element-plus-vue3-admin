@@ -40,8 +40,8 @@ const mutations = {
 const actions = {
   async GenerateRoutes():Promise<void> {
     const res = await getRouterList()
-    const { Data } = res.data
-    generatorDynamicRouter(Data)
+    const { menus } = res.data
+    generatorDynamicRouter(menus)
   }
 }
 

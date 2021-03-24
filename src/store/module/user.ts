@@ -33,7 +33,7 @@ const mutations = {
 const actions = {
   async login(context:ActionContext<IState, any>, param: loginParam):Promise<void> {
     const res = await login(param)
-    const token = res.data.Data
+    const { token } = res.data.data
     context.commit('login', token)
   },
   async getUser(context:ActionContext<IState, any>):Promise<void> {
