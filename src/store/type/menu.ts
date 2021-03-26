@@ -9,25 +9,40 @@ export enum IMenubarStatus {
     PHN     // 手机合并
 }
 
+export interface JsonMenu {
+    id?: number | string
+    menu_name: string
+    menu_type: number
+    path: string
+    permission_tag: string
+    remark: string
+    icon: string
+    hidden: boolean
+    component: string
+    children: Array<JsonMenu>
+}
+
 interface IMenubar {
     parentId?: number | string
     id?: number | string
-    name: string
+    name?: string
     path: string
     redirect?: string | {name: string}
-    meta: {
+    meta?: {
         icon: string
         title: string
-        permission?: Array<string>
+        permission?: string
         activeMenu?: string
         noCache?: boolean
+        buttons?: Array<number>
+        type?: number
     }
     hidden?: boolean
 }
 
 export interface IMenubarList extends IMenubar {
-    // component: (() => Promise<typeof import('*.vue')>)
-    component: (() => Promise<typeof import('*.vue')>)
+    // @ts-ignore
+    component?: (() => Promise<typeof import('*.vue')>)
     children?: Array<IMenubarList>
 }
 

@@ -39,14 +39,15 @@ request.interceptors.request.use(config => {
   return config
 }, errorHandler)
 
+
 // response interceptor
 request.interceptors.response.use((response) => {
   const { data } = response
   loading.close()
   if (data.code !== 200) {
-    if (data.code === 10002) {
+    if (data.code === 10002 || data.code === 10003) {
       if (store.state.user.ACCESS_TOKEN) {
-        store.commit('layout/logout')
+        store.commit('user/logout')
       }
     }
     ElNotification({

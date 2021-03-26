@@ -20,16 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2cea0b2-0213-46a4-a70a-0d848a590949" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/basic/Nested.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/modules/manage/Menu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/modules/manage/Role.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/modules/manage/User.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/layout/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/layout/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/permission.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/asyncRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/asyncRouter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/module/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/module/menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/module/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/module/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/type/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/type/menu.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/listToTree.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/listToTree.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ErrorPage/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ErrorPage/404.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -92,6 +96,7 @@
       <recent name="C:\Projects\element-plus-admin\src\store\type" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\element-plus-admin\src\views\basic" />
       <recent name="C:\Projects\element-plus-admin\src\store" />
     </key>
   </component>
@@ -130,6 +135,9 @@
       <workItem from="1616327410217" duration="9367000" />
       <workItem from="1616476648437" duration="10591000" />
       <workItem from="1616551983854" duration="7270000" />
+      <workItem from="1616642296725" duration="1176000" />
+      <workItem from="1616749536142" duration="2462000" />
+      <workItem from="1616755294737" duration="7518000" />
     </task>
     <task id="LOCAL-00001" summary="修改State">
       <created>1611650900567</created>

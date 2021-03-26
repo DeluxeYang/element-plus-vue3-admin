@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { IMenubarList } from '/@/store/type/menu'
 
 
@@ -12,57 +12,36 @@ const components = {
 
 
 // 静态路由页面
-export const allowRouter:Array<IMenubarList> = [
-  {
-    name: 'Dashboard',
-    path: '/',
-    // @ts-ignore
-    component: components.Layout,
-    redirect: '/Dashboard/Workplace',
-    meta: { title: '仪表盘', icon: 'el-icon-eleme' },
-    children: [
-      {
-        name: 'Workplace',
-        path: '/Dashboard/Workplace',
-        // @ts-ignore
-        component: components.Workplace,
-        meta: { title: '工作台', icon: 'el-icon-s-tools' }
-      }
-    ]
-  },
+export const staticRouter:Array<IMenubarList> = [
   {
     name: 'ErrorPage',
-    path: '/ErrorPage',
+    path: '/404',
     meta: { title: '错误页面', icon: 'el-icon-eleme' },
-    // @ts-ignore
     component: components.Layout,
     redirect: '/ErrorPage/404',
     children: [
       {
         name: '404',
-        path: '/ErrorPage/404',
-        // @ts-ignore
+        path: '/404',
         component: components.NotFound,
         meta: { title: '404', icon: 'el-icon-s-tools' }
       }
-    ]
+    ],
+    hidden: true
   },
   {
     name: 'Redirect',
     path: '/redirect/:pathMatch(.*)*',
     meta: {
       title: '重定向页面',
-      icon: '',
-      permission: []
+      icon: ''
     },
     hidden: true,
-    // @ts-ignore
     component: components.Redirect
   },
   {
     name: 'Login',
-    path: '/Login',
-    // @ts-ignore
+    path: '/login',
     component: components.Login,
     meta: { title: '登录', icon: 'el-icon-eleme' },
     hidden: true
@@ -70,8 +49,8 @@ export const allowRouter:Array<IMenubarList> = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),        // createWebHistory
-  routes: allowRouter
+  history: createWebHistory(),        // createWebHistory
+  routes: <Array<RouteRecordRaw>>staticRouter
 })
 
 export default router

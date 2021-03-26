@@ -1,6 +1,6 @@
 import { getRouterList } from '/@/api/layout'
 import { IMenu, IMenubarStatus, IMenubarList } from '../type/menu'
-import { allowRouter } from '/@/router'
+import { staticRouter } from '/@/router'
 import { generatorDynamicRouter } from '/@/router/asyncRouter'
 
 
@@ -32,7 +32,7 @@ const mutations = {
     state.menuList = data
   },
   concatAllowRoutes(state: IMenu):void {
-    allowRouter.reverse().forEach(v => state.menuList.unshift(v))
+    staticRouter.reverse().forEach(v => state.menuList.unshift(v))
   }
 }
 
@@ -40,7 +40,7 @@ const mutations = {
 const actions = {
   async GenerateRoutes():Promise<void> {
     const res = await getRouterList()
-    const { menus } = res.data
+    const { menus } = res.data.data
     generatorDynamicRouter(menus)
   }
 }
