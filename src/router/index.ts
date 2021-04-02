@@ -1,13 +1,12 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import { IMenubarList } from '/@/store/type/menu'
 
 
 const components = {
-  Layout: () => import('/@/layout/index.vue'),
-  Redirect: () => import('/@/layout/redirect.vue'),
-  NotFound: () => import('/@/views/ErrorPage/404.vue'),
-  Workplace: () => import('/@/views/Dashboard/Workplace.vue'),
-  Login: () => import('/@/views/User/Login.vue')
+  Layout: () => import('/@/views/basic/Layout/index.vue'),
+  Redirect: () => import('/@/views/basic/redirect.vue'),
+  NotFound: () => import('/@/views/basic/404.vue'),
+  Login: () => import('/@/views/basic/Login.vue')
 }
 
 
@@ -49,7 +48,7 @@ export const staticRouter:Array<IMenubarList> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),        // createWebHistory
+  history: createWebHashHistory(),        // createWebHistory
   routes: <Array<RouteRecordRaw>>staticRouter
 })
 

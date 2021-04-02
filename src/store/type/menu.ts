@@ -11,11 +11,11 @@ export enum IMenubarStatus {
 
 export interface JsonMenu {
     id?: number | string
-    menu_name: string
-    menu_type: number
+    name: string
+    type: number
+    title: string
     path: string
-    permission_tag: string
-    remark: string
+    perms: string
     icon: string
     hidden: boolean
     component: string
@@ -31,7 +31,7 @@ interface IMenubar {
     meta?: {
         icon: string
         title: string
-        permission?: string
+        perms?: string
         activeMenu?: string
         noCache?: boolean
         buttons?: Array<number>
@@ -55,4 +55,5 @@ export interface IMenu {
     status: IMenubarStatus
     menuList: Array<IMenubarList>
     isPhone: boolean
+    perms: any
 }

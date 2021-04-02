@@ -1,17 +1,14 @@
 <template>
-  <el-scrollbar>
+  <el-scrollbar class="p-3">
     <router-view
       v-slot="{ Component }">
       <transition
         name="fade-transform"
         mode="out-in">
-        <keep-alive
-          :include="tags.showTags ? data.cachedViews : []">
-          <component
-            :is="Component"
-            :key="key"
-            class="page m-3" />
-        </keep-alive>
+        <component
+          :is="Component"
+          :key="key"
+          class="page m-3" />
       </transition>
     </router-view>
   </el-scrollbar>

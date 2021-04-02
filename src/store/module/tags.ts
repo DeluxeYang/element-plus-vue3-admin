@@ -1,7 +1,6 @@
 import { IMenubarList } from '../type/menu'
 import router from '/@/router/index'
 import { ITags, ITagsList } from '../type/tags'
-import { setLocal, useLocal, getLocal } from '/@/utils/tools'
 
 
 const state:ITags = {
@@ -23,7 +22,8 @@ const mutations = {
       return
     }
     const tagsList:ITagsList = {
-      name: cRouter.name,
+      name: <string>cRouter.name,
+      // @ts-ignore
       title: cRouter.meta.title,
       path: cRouter.path,
       isActive: true

@@ -60,7 +60,7 @@
 import { defineComponent, reactive, watch } from 'vue'
 import { useStore } from '/@/store'
 import { useRoute, RouteLocationNormalizedLoaded } from 'vue-router'
-import Notice from '/@/layout/components/notice.vue'
+import Notice from './notice.vue'
 
 interface IBreadcrumbList {
     path: string

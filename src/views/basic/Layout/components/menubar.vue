@@ -23,7 +23,7 @@
 
 <script lang='ts'>
 import { defineComponent, computed } from 'vue'
-import MenubarItem from '/@/layout/components/menubarItem.vue'
+import MenubarItem from './menubarItem.vue'
 import { useStore } from '/@/store'
 import { useRoute, useRouter } from 'vue-router'
 

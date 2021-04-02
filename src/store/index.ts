@@ -12,6 +12,9 @@ export const store = createStore<IState>({
     tags,
     user,
     theme
+  },
+  getters: {
+    menu: state => state.menu
   }
 })
 

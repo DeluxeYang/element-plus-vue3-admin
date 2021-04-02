@@ -40,11 +40,11 @@
 
 <script lang='ts'>
 import { defineComponent, onMounted } from 'vue'
-import LayoutContent from '/@/layout/components/content.vue'
-import LayoutMenubar from '/@/layout/components/menubar.vue'
-import LayoutNavbar from '/@/layout/components/navbar.vue'
-import LayoutTags from '/@/layout/components/tags.vue'
-import LayoutTheme from '/@/layout/components/theme.vue'
+import LayoutContent from './components/content.vue'
+import LayoutMenubar from './components/menubar.vue'
+import LayoutNavbar from './components/navbar.vue'
+import LayoutTags from './components/tags.vue'
+import LayoutTheme from './components/theme.vue'
 import { useStore } from '/@/store'
 import throttle from '/@/utils/throttle'
 

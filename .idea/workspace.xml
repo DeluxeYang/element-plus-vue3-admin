@@ -20,19 +20,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2cea0b2-0213-46a4-a70a-0d848a590949" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/basic/Nested.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/modules/manage/Menu.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/modules/manage/Role.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/modules/manage/User.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/manage/menu.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/modules/manage/Menu/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/permission.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/permission.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/components/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/content.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/components/menubar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/menubar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/components/menubarItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/menubarItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/components/notice.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/notice.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/components/tags.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/tags.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/components/theme.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/theme.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/redirect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/redirect.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/asyncRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/asyncRouter.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/module/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/module/menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/module/tags.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/module/tags.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/type/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/type/menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/listToTree.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/listToTree.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/request.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ErrorPage/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ErrorPage/404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Bud/BudApply.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Bud/BudList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Components/CardListTest.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Components/ListTest.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Components/OpenWindowTest.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Components/TableSearchTest.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Dashboard/Workplace.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ErrorPage/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Nav/SecondNav/Index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Nav/SecondNav/ThirdNav/Index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Nav/SecondText/Index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Nav/SecondText/ThirdText/Index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Permission/Directive.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Project/ProjectDetail.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Project/ProjectImport.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Project/ProjectList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/User/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/modules/manage/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modules/manage/Menu/MenuUpdate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/modules/manage/Role.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modules/manage/Role.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/modules/manage/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modules/manage/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +98,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/api/manage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -89,14 +116,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\element-plus-admin\src\api\manage" />
+      <recent name="C:\Projects\element-plus-admin\src\components" />
       <recent name="C:\Projects\element-plus-admin\src" />
       <recent name="C:\Projects\element-plus-admin\src\assets\bg" />
       <recent name="C:\Projects\element-plus-admin" />
-      <recent name="C:\Projects\element-plus-admin\src\store\module" />
-      <recent name="C:\Projects\element-plus-admin\src\store\type" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\element-plus-admin\src\views\basic" />
+      <recent name="C:\Projects\element-plus-admin\src\views\basic\Layout" />
+      <recent name="C:\Projects\element-plus-admin\src\views\modules\manage\Menu" />
       <recent name="C:\Projects\element-plus-admin\src\store" />
     </key>
   </component>
@@ -137,7 +166,10 @@
       <workItem from="1616551983854" duration="7270000" />
       <workItem from="1616642296725" duration="1176000" />
       <workItem from="1616749536142" duration="2462000" />
-      <workItem from="1616755294737" duration="7518000" />
+      <workItem from="1616755294737" duration="8347000" />
+      <workItem from="1617070879467" duration="39775000" />
+      <workItem from="1617263205459" duration="1277000" />
+      <workItem from="1617337184506" duration="1951000" />
     </task>
     <task id="LOCAL-00001" summary="修改State">
       <created>1611650900567</created>
@@ -188,11 +220,28 @@
       <option name="project" value="LOCAL" />
       <updated>1616488778645</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2021-3-26">
+      <created>1616763134287</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616763134287</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -215,6 +264,7 @@
     <MESSAGE value="2021-3-22" />
     <MESSAGE value="tags新增左侧右侧关闭" />
     <MESSAGE value="2021-3-23" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-3-23" />
+    <MESSAGE value="2021-3-26" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-3-26" />
   </component>
 </project>

@@ -1,77 +1,61 @@
 import { IMenubarList, JsonMenu } from '/@/store/type/menu'
 import { store } from '/@/store'
 const components = {
-  Layout: () => import('/@/layout/index.vue'),
+  Layout: () => import('/@/views/basic/Layout/index.vue'),
   Nested: () => import('/@/views/basic/Nested.vue'),
-  NotFound: () => import('/@/views/ErrorPage/404.vue'),
+  NotFound: () => import('/@/views/basic/404.vue'),
   UserManage: () => import('/@/views/modules/manage/User.vue'),
   RoleManage: () => import('/@/views/modules/manage/Role.vue'),
-  MenuManage: () => import('/@/views/modules/manage/Menu.vue')
+  MenuManage: () => import('/@/views/modules/manage/Menu/index.vue')
 }
-
-const asyncRouter:Array<IMenubarList> = [
-  {
-    path: '/:pathMatch(.*)*',
-    name: 'NotFound',
-    // @ts-ignore
-    component: components['NotFound'],
-    meta: {
-      title: 'NotFound',
-      icon: ''
-    },
-    redirect: {
-      name: '404'
-    },
-    hidden: true
-  }
-]
 
 
 function convertAsyncRouter(menus:Array<JsonMenu>, isRoot:boolean, path:string): Array<IMenubarList> {
   const routerList:Array<IMenubarList> = []
+
   for (let i = 0; i < menus.length; i++) {
     const router:IMenubarList = {
       id: menus[i].id,
-      name: menus[i].menu_name,
+      name: menus[i].name,
       path: path + '/' + menus[i].path,
       redirect: '',
       meta: {
         icon: menus[i].icon,
-        title: menus[i].remark,
-        permission: menus[i].permission_tag,
+        title: menus[i].title,
+        perms: menus[i].perms,
         activeMenu: '',
         noCache: false,
         buttons: [],
-        type: menus[i].menu_type
+        type: menus[i].type
       },
       hidden: menus[i].hidden
     }
     if (isRoot) {
       router.component = components['Layout']
-      if (menus[i].menu_type === 1) {
+      if (menus[i].type === 1) {
         router.children = [
           {
             path: menus[i].path,
-            name: menus[i].menu_name,
+            name: menus[i].name,
             // @ts-ignore
             component: components[menus[i].component],
             meta: {
-              title: menus[i].remark,
+              title: menus[i].title,
               icon: menus[i].icon,
-              type: menus[i].menu_type
+              type: menus[i].type
             }
           }
         ]
         delete router.name
       }
-    } else if (menus[i].menu_type === 1) {
+    } else if (menus[i].type === 1) {
       // @ts-ignore
       router.component = components[menus[i].component]
     } else {
       router.component = components['Nested']
     }
 
-    if (menus[i].menu_type === 0) {
+    if (menus[i].type === 0) {
       router.children = convertAsyncRouter(menus[i].children, false, router.path)
       router.redirect = router.children.length > 0 ? router.children[0].path : '/'
     } else {
