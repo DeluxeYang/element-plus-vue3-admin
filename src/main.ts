@@ -14,6 +14,8 @@ import 'nprogress/nprogress.css'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import '/@/styles/index.scss' // global css
 
+import svgIcon from '/@/components/SvgIcon/index.vue'
+
 
 // @ts-ignore
 const app = createApp(App)
@@ -21,4 +23,5 @@ direct(app)
 app.use(ElementPlus)
 app.use(router)
 app.use(store)
+app.component('SvgIcon', svgIcon)
 app.mount('#app')

@@ -43,7 +43,9 @@
           v-model="obj.icon"
           size="small">
           <template #prepend>
-            <i :class="obj.icon" />
+            <svg-icon
+              :size="24"
+              name="404" />
           </template>
         </el-input>
       </el-form-item>
@@ -79,10 +81,10 @@
 <script>
 import { defineComponent, reactive, ref, computed } from 'vue'
 import { store } from '/@/store'
+import icons from '/@/icons/requireIcons'
 
 export default defineComponent({
   name: 'MenuUpdate',
-  components: { EIconPicker },
   props: {
     component: {
       type: String,

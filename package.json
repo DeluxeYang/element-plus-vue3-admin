@@ -54,7 +54,8 @@
     "vuex": "^4.0.0-rc.2",
     "sass": "^1.32.8",
     "md5": "^2.3.0",
-    "drag-tree-table": "^2.2.0"
+    "drag-tree-table": "^2.2.0",
+    "svg-sprite-loader": "^6.0.2"
   },
   "browserslist": [
     "> 1%",

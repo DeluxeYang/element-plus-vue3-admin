@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv, UserConfigExport } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import { svgBuilder } from '/@/components/SvgIcon/svgBuilder'
 
 export default (mode: string): UserConfigExport => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
@@ -30,7 +31,7 @@ export default (mode: string): UserConfigExport => {
     optimizeDeps: {
       include: ['axios', 'nprogress']
     },
-    plugins: [vue()],
+    plugins: [vue(), svgBuilder('./src/icons/svg/')],
     css: {
       postcss: {
         plugins: [
