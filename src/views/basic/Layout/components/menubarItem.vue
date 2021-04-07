@@ -4,7 +4,13 @@
     :key="menuList.path"
     :index="menuList.path">
     <template #title>
-      <i :class="menuList.meta.icon || 'el-icon-location'" />
+      <i
+        v-if="menuList.meta.icon.startsWith('el-icon')"
+        :class="menuList.meta.icon || 'el-icon-location'" />
+      <svg-icon
+        v-else
+        class="ml-1 mr-2 inline-block"
+        :name="menuList.meta.icon" />
       <span>{{ menuList.meta.title }}</span>
     </template>
     <el-menu-item-group>
@@ -20,7 +26,13 @@
     v-else
     :key="menuList.path"
     :index="menuList.path">
-    <i :class="menuList.meta.icon || 'el-icon-setting'" />
+    <i
+      v-if="menuList.meta.icon.startsWith('el-icon')"
+      :class="menuList.meta.icon || 'el-icon-location'" />
+    <svg-icon
+      v-else
+      class="ml-1 mr-2"
+      :name="menuList.meta.icon" />
     <template #title>
       {{ menuList.meta.title }}
     </template>

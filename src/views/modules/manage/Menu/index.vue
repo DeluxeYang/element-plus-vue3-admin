@@ -4,7 +4,19 @@
       style="margin-top: 0 !important;"
       :data="treeData"
       :on-drag="onTreeDataChange"
-      fixed />
+      fixed>
+      <template #icon="{row}">
+        <i
+          v-if="row.icon.startsWith('el-icon')"
+          style="font-size: 12px;"
+          :class="row.icon" />
+        <svg-icon
+          v-else
+          :size="12"
+          :name="row.icon" />
+        {{ row.icon }}
+      </template>
+    </drag-tree-table>
     <menu-update
       v-model:visible="updateDialog.visible"
       v-model:component="updateDialog.menu.component"
@@ -46,17 +58,15 @@ export default defineComponent({
           width: 200,
           align: 'center',
           formatter: (item) => {
-            return '<i class="' + item.icon + '"/>  <a>' + item.title + '</a>'
+            return '<a>' + item.title + '</a>'
           }
         },
         {
           title: '菜单图标',
           field: 'icon',
+          type: 'icon',
           align: 'center',
-          flex: 1,
-          formatter: (item) => {
-            return item.icon
-          }
+          flex: 1
         },
         {
           title: '菜单类型',

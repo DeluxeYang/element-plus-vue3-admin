@@ -30,7 +30,7 @@ export default defineComponent({
     const iconName = computed(() => `#icon-${props.name}`)
     const svgClass = computed(() => {
       if (props.name) {
-        return `svg-icon icon-${props.name}`
+        return `svg-icon inline-block icon-${props.name}`
       }
       return 'svg-icon'
     })
@@ -50,6 +50,6 @@ export default defineComponent({
   width: 1em;
   height: 1em;
   fill: currentColor;
-  vertical-align: middle;
+  overflow: hidden;
 }
 </style>

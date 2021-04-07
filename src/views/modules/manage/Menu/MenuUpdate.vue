@@ -39,15 +39,46 @@
       </el-form-item>
       <el-form-item
         label="菜单图标">
-        <el-input
-          v-model="obj.icon"
-          size="small">
-          <template #prepend>
-            <svg-icon
-              :size="24"
-              name="404" />
+        <el-popover
+          placement="bottom-start"
+          width="400"
+          trigger="click">
+          <el-row
+            v-for="i in Math.ceil(icons.iconsList.length/12)"
+            :key="i">
+            <el-col
+              v-for="j in 12"
+              :key="j"
+              :span="2">
+              <el-button
+                v-if="(i-1)*12+j-1 < icons.iconsList.length"
+                size="small"
+                class="border-0"
+                @click="selectIcon(obj, (i-1)*12+j-1)">
+                <svg-icon :name="icons.iconsList[(i-1)*12+j-1]" />
+              </el-button>
+            </el-col>
+          </el-row>
+          <template #reference>
+            <el-input
+              v-model="obj.icon"
+              size="small">
+              <template #prepend>
+                <i
+                  v-if="obj.icon.startsWith('el-icon')"
+                  :class="obj.icon"
+                  style="font-size: 22px;" />
+                <svg-icon
+                  v-else
+                  :size="22"
+                  :name="obj.icon" />
+              </template>
+              <template #append>
+                element原生图标请直接输入
+              </template>
+            </el-input>
           </template>
-        </el-input>
+        </el-popover>
       </el-form-item>
       <el-form-item
         label="前端组件名">
@@ -79,9 +110,24 @@
 </template>
 
 <script>
-import { defineComponent, reactive, ref, computed } from 'vue'
+import { defineComponent, reactive, computed } from 'vue'
 import { store } from '/@/store'
-import icons from '/@/icons/requireIcons'
+import localIcons from '/@/icons/requireIcons'
+
+const iconModule = () => {
+  let icons = reactive({
+    iconsList: localIcons,
+    iconsPopover: false
+  })
+  const selectIcon = (obj, index) => {
+    obj.icon = icons.iconsList[index]
+  }
+
+  return {
+    icons,
+    selectIcon
+  }
+}
 
 export default defineComponent({
   name: 'MenuUpdate',
@@ -132,12 +178,6 @@ export default defineComponent({
         context.emit('update:visible', val)
       }
     })
-    // let obj = computed({
-    //   get: () => props.menu,
-    //   set: val => {
-    //     context.emit('update:menu', val)
-    //   }
-    // })
     let obj = reactive({
       type: 0,
       title: '',
@@ -148,6 +188,7 @@ export default defineComponent({
       icon: '',
       buttons: []
     })
+
     const load = () => {
       obj.type = props.type
       obj.title = props.title
@@ -170,13 +211,14 @@ export default defineComponent({
       context.emit('update:icon', obj.icon)
       context.emit('update:buttons', obj.buttons)
     }
+
     return {
       dialogVisible,
       obj,
       load,
-      confirm
+      confirm,
+      ...iconModule()
     }
   }
 })
 </script>
-
