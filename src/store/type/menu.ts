@@ -9,13 +9,19 @@ export enum IMenubarStatus {
     PHN     // 手机合并
 }
 
+export interface ButtonType {
+    title: string
+    name: string
+    type: number
+}
+
 export interface JsonMenu {
     id?: number | string
     name: string
     type: number
     title: string
     path: string
-    perms: string
+    buttonTypes: Array<ButtonType>
     icon: string
     hidden: boolean
     component: string
@@ -55,5 +61,5 @@ export interface IMenu {
     status: IMenubarStatus
     menuList: Array<IMenubarList>
     isPhone: boolean
-    perms: any
+    buttonTypes: Array<ButtonType>
 }

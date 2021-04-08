@@ -1,10 +1,11 @@
 <template>
   <div>
     <drag-tree-table
-      style="margin-top: 0 !important;"
+      ref="table"
+      class="mt-0"
       :data="treeData"
       :on-drag="onTreeDataChange"
-      fixed>
+      hight-row-change="true">
       <template #icon="{row}">
         <i
           v-if="row.icon.startsWith('el-icon')"
@@ -17,6 +18,13 @@
         {{ row.icon }}
       </template>
     </drag-tree-table>
+    <el-affix
+      position="bottom"
+      :offset="20">
+      <el-button type="primary">
+        距离底部 20px
+      </el-button>
+    </el-affix>
     <menu-update
       v-model:visible="updateDialog.visible"
       v-model:component="updateDialog.menu.component"
@@ -26,15 +34,17 @@
       v-model:path="updateDialog.menu.path"
       v-model:perms="updateDialog.menu.perms"
       v-model:icon="updateDialog.menu.icon"
-      v-model:buttons="updateDialog.menu.buttons" />
+      v-model:buttons="updateDialog.menu.buttons"
+      @typeChange="onChangeToDirect" />
   </div>
 </template>
 
 <script>
-import { defineComponent, reactive, ref, onMounted } from 'vue'
+import { defineComponent, onMounted, reactive, ref } from 'vue'
 import DragTreeTable from 'drag-tree-table/src/lib/index'
-import { getMenu, saveMenu } from '/@/api/manage/menu'
+import { getMenu } from '/@/api/manage/menu'
 import MenuUpdate from './MenuUpdate.vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
 
 export default defineComponent({
   name: 'Menu',
@@ -45,10 +55,9 @@ export default defineComponent({
   setup() {
     let updateDialog = reactive({
       visible: false,
-      menu: {
-
-      }
+      menu: {}
     })
+    const table = ref(null)
     let treeData = reactive({
       columns: [
         {
@@ -123,8 +132,17 @@ export default defineComponent({
             },
             {
               text: '删除',
-              onclick: (item) => {
-                console.log(item)
+              onclick: (row) => {
+                ElMessageBox({
+                  type: 'warning',
+                  title: '删除确认',
+                  message: '是否确认删除[' + row.title + ']以及其中的子页面？',
+                  showCancelButton: true,
+                  cancelButtonText: '取消',
+                  confirmButtonText: '删除'
+                }).then(() => {
+                  treeData.lists = table.value.DelById(row.id)
+                }).catch(() => {})
               },
               formatter: () => {
                 return '<button class="el-button el-button--text" type="button">删除</button>'
@@ -138,9 +156,24 @@ export default defineComponent({
         lists: 'children'
       }
     })
-
+    const inspectTreeData = list => {
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].type === 1 && list[i].children.length > 0) {
+          ElMessage({ message: '不能将页面或者目录拖入页面中', type: 'error' })
+          return false
+        }
+        if (list[i].type === 0) {
+          if (!inspectTreeData(list[i].children)) {
+            return false
+          }
+        }
+      }
+      return true
+    }
     const onTreeDataChange = list => {
-      treeData.lists = list
+      if (inspectTreeData(list)) {
+        treeData.lists = list
+      }
     }
     const loadMenu = (menuData, parentId) => {
       for (let i = 0; i < menuData.length; i++) {
@@ -161,6 +194,14 @@ export default defineComponent({
         }
       }
     }
+    const onChangeToDirect = () => {
+      /** 将目录变更页面后，将目录下的所有子内容放到根目录下 **/
+      for (let i = 0; i < updateDialog.menu.children.length; i++) {
+        treeData.lists.push(updateDialog.menu.children[i])
+      }
+      ElMessage({ message: '变更为页面的原目录的子页面已被移至根目录', type: 'info' })
+      updateDialog.menu.children = []
+    }
     onMounted(() => {
       getMenu().then(res => {
         treeData.lists = res.data.data
@@ -170,8 +211,10 @@ export default defineComponent({
     })
     return {
       onTreeDataChange,
+      onChangeToDirect,
       updateDialog,
-      treeData
+      treeData,
+      table
     }
   }
 })

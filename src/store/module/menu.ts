@@ -1,5 +1,5 @@
 import { getRouterList } from '/@/api/layout'
-import { IMenu, IMenubarStatus, IMenubarList } from '../type/menu'
+import { IMenu, IMenubarStatus, IMenubarList, ButtonType } from '../type/menu'
 import { staticRouter } from '/@/router'
 import { generatorDynamicRouter } from '/@/router/asyncRouter'
 import { store } from '/@/store'
@@ -8,7 +8,7 @@ import { store } from '/@/store'
 const state:IMenu = {
   status: document.body.offsetWidth < 768 ? IMenubarStatus.PHN : IMenubarStatus.PCE,
   menuList: [],
-  perms: {},
+  buttonTypes: [],
   isPhone: document.body.offsetWidth < 768
 }
 
@@ -33,8 +33,8 @@ const mutations = {
   setRoutes(state: IMenu, data: Array<IMenubarList>):void {
     state.menuList = data
   },
-  setPerms(state: IMenu, data: null):void {
-    state.perms = data
+  setButtonTypes(state: IMenu, data: Array<ButtonType>):void {
+    state.buttonTypes = data
   },
   concatAllowRoutes(state: IMenu):void {
     staticRouter.reverse().forEach(v => state.menuList.unshift(v))
@@ -45,8 +45,8 @@ const mutations = {
 const actions = {
   async GenerateRoutes():Promise<void> {
     const res = await getRouterList()
-    const { menus, perms } = res.data.data
-    store.commit('menu/setPerms', perms)
+    const { menus, buttonTypes } = res.data.data
+    store.commit('menu/setButtonTypes', buttonTypes)
     generatorDynamicRouter(menus)
   }
 }

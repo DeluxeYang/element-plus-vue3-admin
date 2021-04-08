@@ -1,7 +1,7 @@
 <template>
   <el-dialog
     v-model="dialogVisible"
-    title="收货地址"
+    title="页面编辑"
     @open="load">
     <el-form
       :model="obj"
@@ -26,6 +26,23 @@
           inactive-text="目录"
           :active-value="1"
           :inactive-value="0" />
+      </el-form-item>
+      <el-form-item
+        v-if="obj.type === 1"
+        label="页面按键">
+        <el-select
+          v-model="obj.buttons"
+          multiple
+          size="small"
+          clearable
+          class="w-full"
+          placeholder="添加按键">
+          <el-option
+            v-for="(item, index) in buttonTypes"
+            :key="index"
+            :label="item.title"
+            :value="item.type" />
+        </el-select>
       </el-form-item>
       <el-form-item
         label="URL">
@@ -105,7 +122,6 @@
           @click="confirm">确 定</el-button>
       </span>
     </template>
-    {{ obj }}
   </el-dialog>
 </template>
 
@@ -122,7 +138,6 @@ const iconModule = () => {
   const selectIcon = (obj, index) => {
     obj.icon = icons.iconsList[index]
   }
-
   return {
     icons,
     selectIcon
@@ -170,7 +185,7 @@ export default defineComponent({
     }
   },
   emits: ['update:visible', 'update:type', 'update:title', 'update:component', 'update:hidden',
-    'update:path', 'update:perms', 'update:icon', 'update:buttons'],
+    'update:path', 'update:perms', 'update:icon', 'update:buttons', 'typeChange'],
   setup(props, context) {
     let dialogVisible = computed({
       get: () => props.visible,
@@ -178,6 +193,7 @@ export default defineComponent({
         context.emit('update:visible', val)
       }
     })
+
     let obj = reactive({
       type: 0,
       title: '',
@@ -188,6 +204,7 @@ export default defineComponent({
       icon: '',
       buttons: []
     })
+    const { buttonTypes } = store.getters.menu
 
     const load = () => {
       obj.type = props.type
@@ -198,10 +215,11 @@ export default defineComponent({
       obj.perms = props.perms
       obj.icon = props.icon
       obj.buttons = props.buttons
-
-      console.log(store.getters.menu.perms)
     }
     const confirm = () => {
+      if (props.type === 0 && obj.type === 1) {
+        context.emit('typeChange') // 由目录变为页面
+      }
       context.emit('update:type', obj.type)
       context.emit('update:title', obj.title)
       context.emit('update:component', obj.component)
@@ -210,6 +228,7 @@ export default defineComponent({
       context.emit('update:perms', obj.perms)
       context.emit('update:icon', obj.icon)
       context.emit('update:buttons', obj.buttons)
+      context.emit('update:visible', false)
     }
 
     return {
@@ -217,6 +236,7 @@ export default defineComponent({
       obj,
       load,
       confirm,
+      buttonTypes,
       ...iconModule()
     }
   }
