@@ -21,9 +21,20 @@
     <el-affix
       position="bottom"
       :offset="20">
-      <el-button type="primary">
-        距离底部 20px
-      </el-button>
+      <div class="text-center">
+        <el-button
+          type="primary"
+          size="small"
+          @click="onCreateMenu">
+          新增
+        </el-button>
+        <el-button
+          type="primary"
+          size="small"
+          @click="onSave">
+          保存
+        </el-button>
+      </div>
     </el-affix>
     <menu-update
       v-model:visible="updateDialog.visible"
@@ -45,6 +56,7 @@ import DragTreeTable from 'drag-tree-table/src/lib/index'
 import { getMenu } from '/@/api/manage/menu'
 import MenuUpdate from './MenuUpdate.vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import { store } from '/@/store'
 
 export default defineComponent({
   name: 'Menu',
@@ -142,7 +154,7 @@ export default defineComponent({
                   confirmButtonText: '删除'
                 }).then(() => {
                   treeData.lists = table.value.DelById(row.id)
-                }).catch(() => {})
+                }).catch(() => null)
               },
               formatter: () => {
                 return '<button class="el-button el-button--text" type="button">删除</button>'
@@ -156,6 +168,7 @@ export default defineComponent({
         lists: 'children'
       }
     })
+
     const inspectTreeData = list => {
       for (let i = 0; i < list.length; i++) {
         if (list[i].type === 1 && list[i].children.length > 0) {
@@ -170,11 +183,13 @@ export default defineComponent({
       }
       return true
     }
+
     const onTreeDataChange = list => {
       if (inspectTreeData(list)) {
         treeData.lists = list
       }
     }
+
     const loadMenu = (menuData, parentId) => {
       for (let i = 0; i < menuData.length; i++) {
         const menu = menuData[i]
@@ -194,6 +209,7 @@ export default defineComponent({
         }
       }
     }
+
     const onChangeToDirect = () => {
       /** 将目录变更页面后，将目录下的所有子内容放到根目录下 **/
       for (let i = 0; i < updateDialog.menu.children.length; i++) {
@@ -202,6 +218,74 @@ export default defineComponent({
       ElMessage({ message: '变更为页面的原目录的子页面已被移至根目录', type: 'info' })
       updateDialog.menu.children = []
     }
+
+    let newId = ref(-1)
+    const onCreateMenu = () => {
+      treeData.lists.push({
+        id: newId.value--,
+        name: 'Unknown',
+        type: 0,
+        title: '新增菜单',
+        path: '',
+        perms: '',
+        icon: '',
+        hidden: false,
+        component: 'Unknown',
+        children: [],
+        parent_id: 0,
+        order: 0,
+        open: false,
+        buttons: []
+      })
+    }
+
+    const { buttonTypes } = store.getters.menu
+    const buttonMap = {}
+    buttonTypes.map(item => {
+      buttonMap[item.type] = item.name
+    })
+
+    const serializeMenu = list => {
+      const menus = []
+      for (let i = 0; i < list.length; i++) {
+        const item = list[i]
+        const menu = {
+          id: item.id,
+          name: item.component || item.perms,
+          type: item.type,
+          title: item.title,
+          path: item.path,
+          perms: item.perms,
+          icon: item.icon,
+          hidden: item.hidden,
+          component: item.component,
+          children: []
+        }
+        if (item.type === 1 && item.buttons.length > 0) {
+          item.buttons.map(t => {
+            menu.children.push({
+              id: newId.value--,
+              name: buttonMap[t],
+              type: t,
+              perms: menu.perms,
+              hidden: false,
+              children: []
+            })
+          })
+        }
+        if (item.type === 0 && item.children.length > 0) {
+          menu.children = serializeMenu(item.children)
+        }
+        menus.push(menu)
+      }
+      return menus
+    }
+
+    const onSave = () => {
+      const menus = serializeMenu(treeData.lists)
+      console.log(menus)
+    }
+
     onMounted(() => {
       getMenu().then(res => {
         treeData.lists = res.data.data
@@ -209,9 +293,12 @@ export default defineComponent({
         console.log(treeData.lists)
       })
     })
+
     return {
       onTreeDataChange,
       onChangeToDirect,
+      onCreateMenu,
+      onSave,
       updateDialog,
       treeData,
       table

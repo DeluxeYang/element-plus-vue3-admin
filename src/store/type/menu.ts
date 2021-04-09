@@ -21,7 +21,7 @@ export interface JsonMenu {
     type: number
     title: string
     path: string
-    buttonTypes: Array<ButtonType>
+    perms: string
     icon: string
     hidden: boolean
     component: string
