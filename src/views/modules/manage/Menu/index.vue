@@ -171,22 +171,22 @@ export default defineComponent({
 
     const inspectTreeData = list => {
       for (let i = 0; i < list.length; i++) {
-        if (list[i].type === 1 && list[i].children.length > 0) {
-          ElMessage({ message: '不能将页面或者目录拖入页面中', type: 'error' })
-          return false
-        }
-        if (list[i].type === 0) {
-          if (!inspectTreeData(list[i].children)) {
-            return false
+        if (list[i].type === 1) {
+          if (list[i].children.length > 0) {
+            throw Error('不能将页面或者目录拖入页面中')
           }
+        } else {
+          inspectTreeData(list[i].children)
         }
       }
-      return true
     }
 
     const onTreeDataChange = list => {
-      if (inspectTreeData(list)) {
+      try {
+        inspectTreeData(list)
         treeData.lists = list
+      } catch (e) {
+        ElMessage({ message: e.message, type: 'error' })
       }
     }
 
@@ -202,9 +202,7 @@ export default defineComponent({
             loadMenu(menu.children, menu.id)
           }
         } if (menu.type === 1) {
-          menu.children.map(item => {
-            menu.buttons.push(item)
-          })
+          menu.buttons = menu.children
           menu.children = []
         }
       }
