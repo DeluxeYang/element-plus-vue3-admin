@@ -46,6 +46,7 @@
       v-model:perms="updateDialog.menu.perms"
       v-model:icon="updateDialog.menu.icon"
       v-model:buttons="updateDialog.menu.buttons"
+      v-model:new-id="newId"
       @typeChange="onChangeToDirect" />
   </div>
 </template>
@@ -53,10 +54,9 @@
 <script>
 import { defineComponent, onMounted, reactive, ref } from 'vue'
 import DragTreeTable from 'drag-tree-table/src/lib/index'
-import { getMenu } from '/@/api/manage/menu'
+import { getMenu, saveMenu } from '/@/api/manage/menu'
 import MenuUpdate from './MenuUpdate.vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
-import { store } from '/@/store'
+import { ElMessage, ElMessageBox, ElNotification } from 'element-plus'
 
 export default defineComponent({
   name: 'Menu',
@@ -203,7 +203,7 @@ export default defineComponent({
           }
         } if (menu.type === 1) {
           menu.children.map(item => {
-            menu.buttons.push(item.type)
+            menu.buttons.push(item)
           })
           menu.children = []
         }
@@ -239,16 +239,13 @@ export default defineComponent({
       })
     }
 
-    const { buttonTypes } = store.getters.menu
-    const buttonMap = {}
-    buttonTypes.map(item => {
-      buttonMap[item.type] = item.name
-    })
-
     const serializeMenu = list => {
       const menus = []
       for (let i = 0; i < list.length; i++) {
         const item = list[i]
+        if (menus.find(x => x.path === item.path)) {
+          throw Error('同级菜单路径不能重复')
+        }
         const menu = {
           id: item.id,
           name: item.component || item.perms,
@@ -262,16 +259,7 @@ export default defineComponent({
           children: []
         }
         if (item.type === 1 && item.buttons.length > 0) {
-          item.buttons.map(t => {
-            menu.children.push({
-              id: newId.value--,
-              name: buttonMap[t],
-              type: t,
-              perms: menu.perms,
-              hidden: false,
-              children: []
-            })
-          })
+          menu.children = item.buttons
         }
         if (item.type === 0 && item.children.length > 0) {
           menu.children = serializeMenu(item.children)
@@ -282,16 +270,30 @@ export default defineComponent({
     }
 
     const onSave = () => {
-      const menus = serializeMenu(treeData.lists)
-      console.log(menus)
+      try {
+        const menus = serializeMenu(treeData.lists)
+        saveMenu(menus).then(() => {
+          ElNotification({
+            title: '保存成功',
+            message: '菜单保存成功',
+            type: 'success'
+          })
+          onGetMenu()
+        })
+      } catch (e) {
+        ElMessage({ message: e.message, type: 'error' })
+      }
     }
 
-    onMounted(() => {
+    const onGetMenu = () => {
       getMenu().then(res => {
         treeData.lists = res.data.data
         loadMenu(treeData.lists, 0)
-        console.log(treeData.lists)
       })
+    }
+
+    onMounted(() => {
+      onGetMenu()
     })
 
     return {
@@ -301,7 +303,8 @@ export default defineComponent({
       onSave,
       updateDialog,
       treeData,
-      table
+      table,
+      newId
     }
   }
 })

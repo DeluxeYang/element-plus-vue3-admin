@@ -34,6 +34,7 @@
           v-model="obj.buttons"
           multiple
           size="small"
+          value-key="type"
           clearable
           class="w-full"
           placeholder="添加按键">
@@ -179,18 +180,28 @@ export default defineComponent({
       type: Array,
       default: null
     },
+    newId: {
+      type: Number,
+      default: -1
+    },
     visible: {
       type: Boolean,
       default: false
     }
   },
   emits: ['update:visible', 'update:type', 'update:title', 'update:component', 'update:hidden',
-    'update:path', 'update:perms', 'update:icon', 'update:buttons', 'typeChange'],
+    'update:path', 'update:perms', 'update:icon', 'update:buttons', 'typeChange', 'update:newId'],
   setup(props, context) {
     let dialogVisible = computed({
       get: () => props.visible,
       set: val => {
         context.emit('update:visible', val)
+      }
+    })
+    let newId = computed({
+      get: () => props.newId,
+      set: val => {
+        context.emit('update:newId', val)
       }
     })
 
@@ -204,7 +215,12 @@ export default defineComponent({
       icon: '',
       buttons: []
     })
+
     const { buttonTypes } = store.getters.menu
+    const buttonMap = {}
+    buttonTypes.map(item => {
+      buttonMap[item.type] = item.name
+    })
 
     const load = () => {
       obj.type = props.type
@@ -214,8 +230,10 @@ export default defineComponent({
       obj.path = props.path
       obj.perms = props.perms
       obj.icon = props.icon
-      obj.buttons = props.buttons
+      obj.buttons = []
+      props.buttons.map(item => obj.buttons.push(item.type))
     }
+
     const confirm = () => {
       if (props.type === 0 && obj.type === 1) {
         context.emit('typeChange') // 由目录变为页面
@@ -227,7 +245,23 @@ export default defineComponent({
       context.emit('update:path', obj.path)
       context.emit('update:perms', obj.perms)
       context.emit('update:icon', obj.icon)
-      context.emit('update:buttons', obj.buttons)
+      let resButtons = []
+      for (let i = 0; i < obj.buttons.length; i++) {
+        let originIndex = props.buttons.findIndex(item => item.type === obj.buttons[i])
+        if (originIndex !== -1) {
+          resButtons.push(props.buttons[originIndex])
+        } else {
+          resButtons.push({
+            id: newId.value--,
+            name: buttonMap[obj.buttons[i]],
+            type: obj.buttons[i],
+            perms: obj.perms,
+            hidden: false,
+            children: []
+          })
+        }
+      }
+      context.emit('update:buttons', resButtons)
       context.emit('update:visible', false)
     }
 
