@@ -7,7 +7,7 @@ export default (app:App<Element>):void => {
       const value:Array<string> = typeof binding.value === 'string' ? [binding.value] : binding.value
       const arg:string = typeof binding.arg === 'string' ? binding.arg : 'or'
       const currentRoute = router.currentRoute.value
-      const roles:Array<string> = currentRoute.meta.permission || []
+      const roles:Array<string> = <Array<string>>currentRoute.meta.permission || []
       const isShow = arg === 'and'
         ? value.every(v => roles.includes(v))
         : value.some(v => roles.includes(v))
