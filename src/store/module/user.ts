@@ -1,4 +1,4 @@
-import { login, loginParam, getUser } from '/@/api/layout/index'
+import { login, loginParam } from '/@/api/basic/login'
 import { ActionContext } from 'vuex'
 import router from '/@/router/index'
 import { IUser } from '/@/store/type/user'
@@ -22,10 +22,6 @@ const mutations = {
     state.ACCESS_TOKEN = ''
     localStorage.removeItem('ACCESS_TOKEN')
     history.go(0)
-  },
-  getUser(state: IUser, userInfo:{name:string, role: Array<string>}):void {
-    state.name = userInfo.name
-    state.role = userInfo.role
   }
 }
 
@@ -34,12 +30,7 @@ const actions = {
   async login(context:ActionContext<IState, any>, param: loginParam):Promise<void> {
     const res = await login(param)
     const { token } = res.data.data
-    context.commit('login', token)
-  },
-  async getUser(context:ActionContext<IState, any>):Promise<void> {
-    const res = await getUser()
-    const userInfo = res.data.Data
-    context.commit('getUser', userInfo)
+    context.commit('index', token)
   }
 }
 

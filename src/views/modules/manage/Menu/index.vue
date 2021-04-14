@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <drag-tree-table
       ref="table"
       class="mt-0"

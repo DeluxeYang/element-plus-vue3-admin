@@ -3,6 +3,7 @@ import { createApp } from 'vue'
 import App from '/@/App.vue'
 import ElementPlus from 'element-plus'
 import direct from '/@/directive/action'
+import dialogDrag from '/@/directive/dialogDrag'
 import router from '/@/router/index'
 import { store } from '/@/store'
 import '/@/permission'
@@ -20,6 +21,7 @@ import svgIcon from '/@/components/SvgIcon/index.vue'
 // @ts-ignore
 const app = createApp(App)
 direct(app)
+dialogDrag(app)
 app.use(ElementPlus)
 app.use(router)
 app.use(store)

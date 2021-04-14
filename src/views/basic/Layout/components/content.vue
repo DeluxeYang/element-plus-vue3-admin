@@ -8,7 +8,7 @@
         <component
           :is="Component"
           :key="key"
-          class="page m-3" />
+          class="page" />
       </transition>
     </router-view>
   </el-scrollbar>

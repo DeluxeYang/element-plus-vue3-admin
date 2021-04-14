@@ -1,4 +1,4 @@
-import { getRouterList } from '/@/api/layout'
+import { getRouterList } from '/@/api/basic/login'
 import { IMenu, IMenubarStatus, IMenubarList, ButtonType } from '../type/menu'
 import { staticRouter } from '/@/router'
 import { generatorDynamicRouter } from '/@/router/asyncRouter'

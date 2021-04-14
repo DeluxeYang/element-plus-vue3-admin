@@ -5,7 +5,7 @@ const components = {
   Nested: () => import('/@/views/basic/Nested.vue'),
   NotFound: () => import('/@/views/basic/404.vue'),
   UserManage: () => import('/@/views/modules/manage/User.vue'),
-  RoleManage: () => import('/@/views/modules/manage/Role.vue'),
+  RoleManage: () => import('/@/views/modules/manage/Role/Role.vue'),
   MenuManage: () => import('/@/views/modules/manage/Menu/index.vue')
 }
 

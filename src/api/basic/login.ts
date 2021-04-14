@@ -20,13 +20,6 @@ export function login(param: loginParam): AxiosPromise {
   })
 }
 
-export function getUser(): AxiosPromise {
-  return request({
-    url: '/getUser',
-    method: 'get'
-  })
-}
-
 export function getRouterList(): AxiosPromise {
   return request({
     url: '/info',

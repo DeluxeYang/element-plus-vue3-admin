@@ -40,7 +40,7 @@ export const staticRouter:Array<IMenubarList> = [
   },
   {
     name: 'Login',
-    path: '/login',
+    path: '/index',
     component: components.Login,
     meta: { title: '登录', icon: 'el-icon-eleme' },
     hidden: true
