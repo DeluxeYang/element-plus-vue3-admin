@@ -17,23 +17,30 @@
           :name="row.icon" />
         {{ row.icon }}
       </template>
+      <template #action="{row}">
+        <perms-button
+          perms="update"
+          type="text"
+          divider
+          @click="onUpdate(row)" />
+        <perms-button
+          perms="delete"
+          type="text"
+          @click="onDelete(row)" />
+      </template>
     </drag-tree-table>
     <el-affix
       position="bottom"
       :offset="20">
       <div class="text-center">
-        <el-button
-          type="primary"
-          size="small"
-          @click="onCreateMenu">
-          新增
-        </el-button>
-        <el-button
-          type="primary"
-          size="small"
-          @click="onSave">
-          保存
-        </el-button>
+        <perms-button
+          perms="create"
+          class="mr-3"
+          @click="onCreateMenu" />
+        <perms-button
+          perms="update"
+          alt="保存"
+          @click="onSave" />
       </div>
     </el-affix>
     <menu-update
@@ -129,38 +136,8 @@ export default defineComponent({
         {
           title: '操作',
           type: 'action',
-          width: 120,
-          align: 'center',
-          actions: [
-            {
-              text: '编辑',
-              onclick: (item) => {
-                updateDialog.visible = true
-                updateDialog.menu = item
-              },
-              formatter: () => {
-                return '<button class="el-button el-button--text" type="button">编辑</button> '
-              }
-            },
-            {
-              text: '删除',
-              onclick: (row) => {
-                ElMessageBox({
-                  type: 'warning',
-                  title: '删除确认',
-                  message: '是否确认删除[' + row.title + ']以及其中的子页面？',
-                  showCancelButton: true,
-                  cancelButtonText: '取消',
-                  confirmButtonText: '删除'
-                }).then(() => {
-                  treeData.lists = table.value.DelById(row.id)
-                }).catch(() => null)
-              },
-              formatter: () => {
-                return '<button class="el-button el-button--text" type="button">删除</button>'
-              }
-            }
-          ]
+          width: 180,
+          align: 'center'
         }
       ],
       lists: [],
@@ -283,6 +260,24 @@ export default defineComponent({
       }
     }
 
+    const onUpdate = item => {
+      updateDialog.visible = true
+      updateDialog.menu = item
+    }
+
+    const onDelete = item => {
+      ElMessageBox({
+        type: 'warning',
+        title: '删除确认',
+        message: '是否确认删除[' + item.title + ']以及其中的子页面？',
+        showCancelButton: true,
+        cancelButtonText: '取消',
+        confirmButtonText: '删除'
+      }).then(() => {
+        treeData.lists = table.value.DelById(item.id)
+      }).catch(() => null)
+    }
+
     const onGetMenu = () => {
       getMenu().then(res => {
         treeData.lists = res.data.data
@@ -299,6 +294,8 @@ export default defineComponent({
       onChangeToDirect,
       onCreateMenu,
       onSave,
+      onUpdate,
+      onDelete,
       updateDialog,
       treeData,
       table,

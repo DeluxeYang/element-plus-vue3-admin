@@ -5,8 +5,13 @@
 </template>
 
 <script>
+
+import { store } from '/@/store'
 export default {
-  name: 'Role'
+  name: 'Role',
+  created() {
+    console.log(store.getters)
+  }
 }
 </script>
 

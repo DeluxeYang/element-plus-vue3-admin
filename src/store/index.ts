@@ -14,7 +14,8 @@ export const store = createStore<IState>({
     theme
   },
   getters: {
-    menu: state => state.menu
+    menu: state => state.menu,
+    perms: state => state.user.perms
   }
 })
 

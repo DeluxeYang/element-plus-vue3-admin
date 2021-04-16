@@ -59,10 +59,16 @@ function convertAsyncRouter(menus:Array<JsonMenu>, isRoot:boolean, path:string):
       router.children = convertAsyncRouter(menus[i].children, false, router.path)
       router.redirect = router.children.length > 0 ? router.children[0].path : '/'
     } else {
+      const perms = new Map<number, boolean>()
       for (let j = 0; j < menus[i].children.length; j++) {
         // @ts-ignore
-        router.meta.buttons.push(menus[i].children[j].menu_type)
+        router.meta.buttons.push(menus[i].children[j].type)
+        perms.set(menus[i].children[j].type, true)
       }
+      store.commit('user/setPerms', {
+        perms: menus[i].perms,
+        value: perms
+      })
     }
     routerList.push(router)
   }

@@ -8,6 +8,7 @@ import { IState } from '/@/store/type'
 const state:IUser = {
   name: '',
   role: [],
+  perms: new Map(),
   ACCESS_TOKEN: localStorage.getItem('ACCESS_TOKEN') || ''
 }
 
@@ -22,6 +23,9 @@ const mutations = {
     state.ACCESS_TOKEN = ''
     localStorage.removeItem('ACCESS_TOKEN')
     history.go(0)
+  },
+  setPerms(state: IUser, perms: {perms: string, value: Map<number, boolean>}): void {
+    state.perms.set(perms.perms, perms.value)
   }
 }
 
@@ -30,7 +34,7 @@ const actions = {
   async login(context:ActionContext<IState, any>, param: loginParam):Promise<void> {
     const res = await login(param)
     const { token } = res.data.data
-    context.commit('index', token)
+    context.commit('login', token)
   }
 }
 

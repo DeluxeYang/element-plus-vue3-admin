@@ -96,7 +96,7 @@ const loginModule = () => {
     let { username, password } = loginFormData
     if (!await validate(loginForm)) return
     await store.dispatch(
-      'user/index',
+      'user/login',
       { username: username, password: password }
     ).then(() => {
       ElNotification({

@@ -16,6 +16,7 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import '/@/styles/index.scss' // global css
 
 import svgIcon from '/@/components/SvgIcon/index.vue'
+import permsButton from '/@/components/PermsButton/index.vue'
 
 
 // @ts-ignore
@@ -26,4 +27,5 @@ app.use(ElementPlus)
 app.use(router)
 app.use(store)
 app.component('SvgIcon', svgIcon)
+app.component('PermsButton', permsButton)
 app.mount('#app')

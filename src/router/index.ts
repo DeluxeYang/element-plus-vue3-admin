@@ -17,7 +17,7 @@ export const staticRouter:Array<IMenubarList> = [
     path: '/404',
     meta: { title: '错误页面', icon: 'el-icon-eleme' },
     component: components.Layout,
-    redirect: '/ErrorPage/404',
+    redirect: '/404',
     children: [
       {
         name: '404',
@@ -40,7 +40,7 @@ export const staticRouter:Array<IMenubarList> = [
   },
   {
     name: 'Login',
-    path: '/index',
+    path: '/login',
     component: components.Login,
     meta: { title: '登录', icon: 'el-icon-eleme' },
     hidden: true

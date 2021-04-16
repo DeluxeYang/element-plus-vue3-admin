@@ -5,7 +5,7 @@ import { RouteRecordRaw } from 'vue-router'
 
 configure({ showSpinner: false })
 
-const loginRoutePath = '/Login'
+const loginRoutePath = '/login'
 const defaultRoutePath = '/'
 
 router.beforeEach(async (to, from) => {
