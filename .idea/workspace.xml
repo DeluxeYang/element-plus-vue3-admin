@@ -19,25 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2cea0b2-0213-46a4-a70a-0d848a590949" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Pagination/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/directive/dialogDrag.ts" afterDir="false" />
+    <list default="true" id="f2cea0b2-0213-46a4-a70a-0d848a590949" name="Default Changelist" comment="2021-4-16">
+      <change afterPath="$PROJECT_DIR$/src/components/List/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Search/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Table/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/emitter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/components/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/layout/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/basic/login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directive/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directive/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardListItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OpenWindow.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pagination/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pagination/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PermsButton/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PermsButton/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TableSearch.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mock/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mock/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/asyncRouter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/asyncRouter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/module/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/module/menu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/module/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/module/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/basic/Layout/components/content.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/content.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/basic/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/modules/manage/Menu/MenuUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modules/manage/Menu/MenuUpdate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/modules/manage/Menu/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modules/manage/Menu/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/modules/manage/Role.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modules/manage/Role/Role.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/type/utils/tools.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/basic/Layout/components/notice.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/basic/Layout/components/notice.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/modules/manage/Role/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modules/manage/Role/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +49,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -82,7 +84,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/directive" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/api/manage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -100,11 +102,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Projects\element-plus-admin\src\directive" />
+      <recent name="C:\Projects\element-plus-admin\src\api\manage" />
+      <recent name="C:\Projects\element-plus-admin\src\views\modules\manage\Role" />
       <recent name="C:\Projects\element-plus-admin\src\utils" />
-      <recent name="C:\Projects\element-plus-admin\src\components" />
-      <recent name="C:\Projects\element-plus-admin\src\api" />
-      <recent name="C:\Projects\element-plus-admin\src\views\modules\manage\Menu" />
+      <recent name="C:\Projects\element-plus-admin\src\components\PermsButton" />
+      <recent name="C:\Projects\element-plus-admin\src\directive" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\element-plus-admin\src\api\basic" />
@@ -162,6 +164,16 @@
       <workItem from="1618214846356" duration="614000" />
       <workItem from="1618279898418" duration="11308000" />
       <workItem from="1618363361629" duration="11463000" />
+      <workItem from="1618484339815" duration="2058000" />
+      <workItem from="1618544232712" duration="15762000" />
+      <workItem from="1618880920184" duration="4779000" />
+      <workItem from="1618888769208" duration="12629000" />
+      <workItem from="1618975893076" duration="148000" />
+      <workItem from="1618976100740" duration="14302000" />
+      <workItem from="1619076124111" duration="5707000" />
+      <workItem from="1619503578002" duration="2686000" />
+      <workItem from="1619507992588" duration="6515000" />
+      <workItem from="1619676235615" duration="4941000" />
     </task>
     <task id="LOCAL-00001" summary="修改State">
       <created>1611650900567</created>
@@ -254,7 +266,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618307532137</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="PermsButton">
+      <created>1618559374817</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1618559374817</updated>
+    </task>
+    <task id="LOCAL-00015" summary="2021-4-16">
+      <created>1618563869719</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1618563869719</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +322,8 @@
     <MESSAGE value="菜单管理拖拽、删除逻辑，页面按键" />
     <MESSAGE value="菜单管理新增、保存" />
     <MESSAGE value="菜单管理基本完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="菜单管理基本完成" />
+    <MESSAGE value="PermsButton" />
+    <MESSAGE value="2021-4-16" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-4-16" />
   </component>
 </project>

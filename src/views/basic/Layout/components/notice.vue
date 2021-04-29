@@ -46,7 +46,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
-import List from '/@/components/List.vue'
+import List from '/@/components/List/index.vue'
 
 export default defineComponent({
   name: 'Notice',

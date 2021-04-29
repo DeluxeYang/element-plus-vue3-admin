@@ -9,12 +9,14 @@
       :layout="layout"
       :page-sizes="pageSizes"
       :total="total"
-      v-bind="$attrs" />
+      @size-change="onSizeChange"
+      @current-change="onCurrentChange" />
   </div>
 </template>
 
 <script>
-export default {
+import { defineComponent, computed } from 'vue'
+export default defineComponent({
   name: 'Pagination',
   props: {
     total: {
@@ -31,9 +33,7 @@ export default {
     },
     pageSizes: {
       type: Array,
-      default(): Array<number> {
-        return [10, 20, 30, 50]
-      }
+      default: [10, 20, 30, 50]
     },
     layout: {
       type: String,
@@ -52,32 +52,44 @@ export default {
       default: false
     }
   },
-  emits: ['update:page', 'update:limit'],
-  computed: {
-    currentPage: {
-      get(): number {
-        return this.page
+  emits: ['update:page', 'update:limit', 'pagination'],
+  setup(props, context) {
+    let currentPage = computed({
+      get: () => {
+        return props.page
       },
-      set(val: number): number {
-        this.$emit('update:page', val)
+      set: (val) => {
+        context.emit('update:page', val)
       }
-    },
-    pageSize: {
-      get(): number {
-        return this.limit
+    })
+    let pageSize = computed({
+      get: () => {
+        return props.limit
       },
-      set(val: number): number {
-        this.$emit('update:limit', val)
+      set: (val) => {
+        context.emit('update:limit', val)
       }
+    })
+    const onSizeChange = () => {
+      context.emit('pagination')
+    }
+    const onCurrentChange = () => {
+      context.emit('pagination')
+    }
+    return {
+      currentPage,
+      pageSize,
+      onSizeChange,
+      onCurrentChange
     }
   }
-}
+})
 </script>
 
 <style scoped>
 .pagination-container {
   background: #fff;
-  padding: 12px 16px 0 16px;
+  margin-top: 10px;
 }
 .pagination-container.hidden {
   display: none;

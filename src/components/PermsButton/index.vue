@@ -14,7 +14,7 @@
           :size="buttonSize"
           @click.prevent.stop="onClick()">
           <svg-icon
-            v-if="!buttonIcon.startsWith('el-icon')"
+            v-if="buttonIcon !== '' && !buttonIcon.startsWith('el-icon')"
             :name="buttonIcon"
             style="width: 10px;margin-right: 5px" />
           {{ buttonLabel }}
@@ -30,7 +30,7 @@
       :size="buttonSize"
       @click.prevent.stop="onClick()">
       <svg-icon
-        v-if="!buttonIcon.startsWith('el-icon')"
+        v-if="buttonIcon !== '' && !buttonIcon.startsWith('el-icon')"
         :name="buttonIcon"
         style="width: 10px;margin-right: 5px" />
       {{ buttonLabel }}

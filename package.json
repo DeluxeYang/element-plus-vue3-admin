@@ -55,7 +55,8 @@
     "sass": "^1.32.8",
     "md5": "^2.3.0",
     "drag-tree-table": "^2.2.0",
-    "svg-sprite-loader": "^6.0.2"
+    "svg-sprite-loader": "^6.0.2",
+    "mitt": "^2.1.0"
   },
   "browserslist": [
     "> 1%",
